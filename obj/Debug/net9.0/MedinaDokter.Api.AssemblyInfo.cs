@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MedinaDokter.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+96f3ae49a02d9a43595a168df52ea8d778e2826a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+560f015be5c52850347ef1ec7575d6449f48d629")]
 [assembly: System.Reflection.AssemblyProductAttribute("MedinaDokter.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MedinaDokter.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
