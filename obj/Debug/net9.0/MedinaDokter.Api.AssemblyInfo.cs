@@ -10,10 +10,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("191e7c6d-8b76-4693-9ae6-92f9ed3990a2")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("MedinaDokter.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b5dd18ef80aa8ae625e1c6b60cbdc66563c4de4a")]
 [assembly: System.Reflection.AssemblyProductAttribute("MedinaDokter.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MedinaDokter.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
