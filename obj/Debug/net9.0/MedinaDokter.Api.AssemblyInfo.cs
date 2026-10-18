@@ -15,6 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a3ac9474d474c46b28658e469a26b686e9c8f533")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b410d5c3753d7d7fb7cfda54903c8a51a9ff5453")]
 [assembly: System.Reflection.AssemblyProductAttribute("MedinaDokter.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MedinaDokter.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
