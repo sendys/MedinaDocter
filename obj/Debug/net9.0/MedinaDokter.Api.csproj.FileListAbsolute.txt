@@ -31,3 +31,4 @@
 /Users/simrsmeuraxa/MedinaDokter/MedinaDokter.Api/obj/Debug/net9.0/MedinaDokter.Api.pdb
 /Users/simrsmeuraxa/MedinaDokter/MedinaDokter.Api/obj/Debug/net9.0/MedinaDokter.Api.genruntimeconfig.cache
 /Users/simrsmeuraxa/MedinaDokter/MedinaDokter.Api/obj/Debug/net9.0/ref/MedinaDokter.Api.dll
+/Users/simrsmeuraxa/MedinaDokter/MedinaDokter.Api/obj/Debug/net9.0/MedinaDokter.Api.sourcelink.json
