@@ -1,0 +1,16 @@
+
+# .NET build output
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio
+.vs/
+
+# User-specific files
+*.user
+*.suo
+
+# Sensitive local configuration
+.env
+.env.*
+!.env.example
