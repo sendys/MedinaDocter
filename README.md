@@ -231,10 +231,3 @@ Jangan mencantumkan kredensial, private key, token, atau nilai rahasia di bagian
 ## 13. Catatan Proyek
 
 README ini adalah dokumen awal kebutuhan dan arah pengembangan MedinaDokter. Perbarui bagian teknologi, struktur database, instruksi instalasi, dan status fitur setelah pemeriksaan repositori dan implementasi aktual.
-
----
-
-**Nama proyek:** MedinaDokter  
-**Fokus awal:** Modul dokter rawat inap dan RME  
-**Dokumen:** `README.md`  
-**Lingkungan yang terlihat pada referensi:** `dev`  
