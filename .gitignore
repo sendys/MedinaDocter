@@ -10,7 +10,30 @@
 *.user
 *.suo
 
+<<<<<<< Updated upstream
 # Sensitive local configuration
 .env
 .env.*
 !.env.example
+=======
+# .NET Core specific
+project.lock.json
+project.fragment.lock.json
+artifacts/
+**/Properties/launchSettings.json
+
+# IDE - Zed (Sesuai folder di gambar)
+.zed/
+
+# Node.js (Jika nanti ada frontend)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+.env
+>>>>>>> Stashed changes
