@@ -1,0 +1,91 @@
+name: Deploy ke Server / VPS
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-test-deploy:
+    runs-on: self-hosted
+    timeout-minutes: 30
+
+    steps:
+      # ======================
+      # 1. Checkout
+      # ======================
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # ======================
+      # 2. Setup .NET
+      # ======================
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.122'   # sesuaikan versi project kamu
+
+      # ======================
+      # 3. Restore
+      # ======================
+      - name: Restore dependencies
+        run: dotnet restore
+
+      # ======================
+      # 4. Build
+      # ======================
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+
+      # ======================
+      # 5. Test
+      # ======================
+      - name: Run Tests
+        id: test
+        run: dotnet test --configuration Release --no-build --verbosity normal
+
+      # ======================
+      # 6. Publish
+      # ======================
+      - name: Publish
+        run: dotnet publish -c Release -o ./publish --no-build
+
+      # ======================
+      # 7. Deploy
+      # ======================
+      - name: Deploy ke folder aplikasi
+        run: |
+          sudo rm -rf /var/www/medina-dokter/*
+          sudo cp -r ./publish/* /var/www/medina-dokter/
+          sudo chown -R www-data:www-data /var/www/medina-dokter
+
+      # ======================
+      # 8. Restart Service
+      # ======================
+      - name: Restart Aplikasi
+        run: sudo systemctl restart medina-dokter
+
+      # ======================
+      # 9. Notifikasi SUKSES
+      # ======================
+      - name: Notifikasi Telegram - Sukses
+        if: success()
+        run: |
+          MESSAGE="✅ *Deploy Berhasil*%0A%0AProject: *${{ github.repository }}*%0ABranch: \`${{ github.ref_name }}\`%0ACommit: \`${{ github.sha }}\`%0AOleh: ${{ github.actor }}%0A%0AServer RS sudah di-update."
+          
+          curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+            -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
+            -d text="$MESSAGE" \
+            -d parse_mode="Markdown"
+
+      # ======================
+      # 10. Notifikasi GAGAL
+      # ======================
+      - name: Notifikasi Telegram - Gagal
+        if: failure()
+        run: |
+          MESSAGE="❌ *Deploy Gagal*%0A%0AProject: *${{ github.repository }}*%0ABranch: \`${{ github.ref_name }}\`%0ACommit: \`${{ github.sha }}\`%0AOleh: ${{ github.actor }}%0A%0ASilakan cek log di GitHub Actions."
+          
+          curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+            -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
+            -d text="$MESSAGE" \
+            -d parse_mode="Markdown"
